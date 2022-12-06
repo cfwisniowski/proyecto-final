@@ -1,2 +1,2 @@
-# proyecto-final
+proyecto-final
 Mi proyecto final

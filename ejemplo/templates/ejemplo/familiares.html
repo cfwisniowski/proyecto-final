@@ -1,0 +1,34 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} 
+BUSCAR FAMILIARES 
+{% endblock %}
+{% block contenido %}
+
+{% for familiar in lista_familiares %}
+<ul>
+    <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha: {{familiar.fecha}} </li>
+</ul>
+{% endfor %}
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Lista de mis familiares</h1>
+
+    {% for familiar in lista_familiares %}
+        <ul>
+            <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha: {{familiar.fecha}} </li>
+        </ul>
+    {% endfor %}
+    
+</body>
+</html>
