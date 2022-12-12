@@ -1,34 +1,18 @@
 {% extends 'ejemplo/base.html' %}
-{% block titulo%} 
-BUSCAR FAMILIARES 
-{% endblock %}
-{% block contenido %}
 
+{% block contenido %}
+    <a href='/mi-familia/alta'>Nuevo Familiar</a>
 {% for familiar in lista_familiares %}
 <ul>
-    <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha: {{familiar.fecha}} </li>
+    <li> Id: {{familiar.id}}, Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}
+        <!-- Esto agrega un link al form de actulización-->
+        <a href='/mi-familia/actualizar/{{ familiar.id }}'>Actualizar</a>
+        <a href='/mi-familia/borrar/{{ familiar.id }}'>Borrar</a>
+    </li>
 </ul>
 {% endfor %}
+{%endblock %}
+
+{% block titulo%}
+Lista de todos mis Familiares
 {% endblock %}
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <h1>Lista de mis familiares</h1>
-
-    {% for familiar in lista_familiares %}
-        <ul>
-            <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha: {{familiar.fecha}} </li>
-        </ul>
-    {% endfor %}
-    
-</body>
-</html>

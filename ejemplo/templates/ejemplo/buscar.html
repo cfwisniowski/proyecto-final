@@ -3,6 +3,7 @@
 BUSCAR FAMILIARES 
 {% endblock %}
 {% block contenido %}
+
 <form action="/mi-familia/buscar" method="post">
     {% csrf_token %}
     {{ form }}
@@ -11,7 +12,7 @@ BUSCAR FAMILIARES
 
   {% for familiar in lista_familiares %}
       <ul>
-          <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha: {{familiar.fecha}}</li>
+          <li> Id: {{familiar.id}}, Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}
       </ul>
   {% endfor %}
 {% endblock %}
@@ -36,8 +37,7 @@ BUSCAR FAMILIARES
 
       {% for familiar in lista_familiares %}
       <ul>
-          <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Fecha: {{familiar.fecha}}</li>
-      </ul>
+          <li> Id: {{familiar.id}}, Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}
       {% endfor %}
 
   </body>
