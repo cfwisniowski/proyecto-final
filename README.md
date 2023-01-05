@@ -2,7 +2,7 @@ PASOS REALIZADOS
 
 Configuraciòn previa del repositorio git local y github
 Descarga de framework getbootstrap
-Copia de carpetas estaticas (assets, css y js)
+Copia de carpetas estaticas (assets, css y js) sobre el proyecto
 Creaciòn de templates y adaptacion del index.html / base.html
 Caega del archivo forms.py
 Carga de modelos en models.py
