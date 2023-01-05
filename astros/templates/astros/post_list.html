@@ -1,0 +1,43 @@
+{% extends 'astros/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <div class="card mb-4">
+        <center>
+        <div class="card-header" center>Opciones Generales</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-unstyled mb-0">
+                    <li><a href="{% url 'astros-crear' %}">Crear Post</a><br></li>
+                    <li><a href="{% url 'astros-avatars-actualizar' user.id %}">Actualizar Avatar</a><br></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="{% url 'astros-users-actualizar' user.id %}">Actualizar Perfil</a><br></li>
+                        <li><a href="{% url 'astros-mensajes-listar' %}">Ver Mensajes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </center>
+    </div>
+
+
+
+    {% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}} 
+        {% if user.is_superuser %}
+        &nbsp; &nbsp;
+        <a href="{% url 'astros-borrar' post.id %}">Borrar</a> &nbsp; &nbsp;
+        <a href="{% url 'astros-actualizar' post.id %}">Actualizar Mensaje</a> &nbsp; &nbsp;
+        {% endif %}
+        <a href="{% url 'astros-detalle' post.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
