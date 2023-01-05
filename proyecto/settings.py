@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ejemplo.apps.EjemploConfig',
+<<<<<<< HEAD
     'astros.apps.EjemploDosConfig',
+=======
+    'ejemplo_dos.apps.EjemploDosConfig',
+>>>>>>> cacbdb78ad7cd92d33e128e988329e7b3add8e17
 ]
 
 MIDDLEWARE = [
@@ -124,7 +128,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 LOGIN_URL = 'astros-login'
+=======
+LOGIN_URL = 'ejemplo-dos-login'
+>>>>>>> cacbdb78ad7cd92d33e128e988329e7b3add8e17
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
